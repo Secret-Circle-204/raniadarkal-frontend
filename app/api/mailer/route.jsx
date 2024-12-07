@@ -3,12 +3,12 @@ import * as nodemailer from 'nodemailer'
 
 // Handles POST requests to /api
 export async function POST(request) {
-  // const username = process.env.NEXT_PUBLIC_BURNER_USERNAME || 'info@raniadarkal.com'
-  const username = 'info@raniadarkal.com'
+  // const username = process.env.NEXT_PUBLIC_BURNER_USERNAME || 'rania@raniadarkal.com'
+  const username = 'rania@raniadarkal.com'
   const password = 'Elia@raniadarkal'
-  const recipientEmail = 'info@raniadarkal.com'
+  const recipientEmail = 'rania@raniadarkal.com'
   // const recipientEmail2 = 'test@gmail.com'
-  const myEmail = 'info@raniadarkal.com'
+  const myEmail = 'rania@raniadarkal.com'
   // const myEmail2 = 'test@gmail.com'
 
   console.log('dealing with request' + recipientEmail)
