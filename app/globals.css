@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Poppins", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+}
+
+.swiper-button-next:after {
+  color: #c7ab5a !important;
+}
+
+.swiper-button-prev:after {
+  color: #c7ab5a !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #c7ab5a !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #c7ab5a !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #111;
+  scrollbar-color: #c7ab5a #111;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c7ab5a;
+  border-radius: 6px;
+}
+
+.bg-img {
+  background-image: url(../contact-us-2.jpg);
+  /* opacity: 90%; */
+}
+
+.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999999;
+  -webkit-animation-duration: 1.6s;
+  animation-duration: 1.6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* footer */
+footer {
+  position: relative;
+  padding: 75px 0 0;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  overflow: hidden;
+}
+
+footer .bg-footer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+footer .bg-footer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer .footer-col {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 15px 0;
+}
+
+footer .footer-col .heading {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+footer .footer-col .content {
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+
+footer .footer-col .content .link {
+  font-size: 0.96rem;
+  width: max-content;
+  letter-spacing: 0;
+  padding: 0 0 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(200, 177, 111, 0.8);
+}
+
+footer .footer-col .content .link:hover {
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+footer .footer-col .content .socialicon {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 14px 6px;
+  background: #111;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid rgba(200, 177, 111, 0.8);
+  transition: all 0.3s ease;
+}
+
+footer .footer-col .content .socialicon i {
+  font-size: 1.3rem;
+}
+
+footer .footer-col .content .socialicon:hover {
+  background: #c8b16f;
+  transition: all 0.3s ease;
+}
+
+footer .footer-col .content .socialicon:hover .shine {
+  z-index: 1;
+  -webkit-animation: sheen 2s alternate;
+  animation: sheen 2s alternate;
+}
+
+footer .footer-col .link-call {
+  font-weight: 300;
+  display: inline-block;
+  color: #c8b16f;
+  font-size: 0.8rem;
+  width: max-content;
+  letter-spacing: 1px;
+  padding: 0 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+footer .footer-col .link-call:hover {
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
