@@ -1,108 +1,54 @@
-'use client'
-
-
-import React, { useState, useEffect, useRef } from 'react'
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow, Controller, EffectFade } from 'swiper/modules';
-
-import getAssetURL from '@/lib/get-asset-url'
-// Import Swiper React components
+'use client';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import Image from 'next/image';
+import getAssetURL from '@/lib/get-asset-url';
 
-const mokuSlideImages = [
-  {
-    id: 1,
-    src: '/images/bg-1.jpg',
-  },
-  {
-    id: 2,
-    src: '/images/bg-2.jpg',
-  },
-  {
-    id: 3,
-    src: '/images/bg-3.jpg',
-  },
-  {
-    id: 4,
-    src: '/images/bg-4.jpg',
-  }
-]
-export default function SliderHome({ tagline, headline }) {
-  // console.log('homedata', slideImg)
-  // console.log('homedata', homedata.images)
-  const slideImg = mokuSlideImages
-  console.log('SlideImg', slideImg)
+const SliderHome = ({ tagline, headline, slideImg }) => {
+  const [visible, setVisible] = useState(true);
+
   return (
     <Swiper
-      className='w-screen mx-auto pt-16  max-sm:h-[80vh]  h-[80vh] slider-wrapper'
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow, EffectFade, Controller]}
+      className="w-screen mx-auto pt-16 max-sm:h-[80vh] h-[95vh] slider-wrapper"
+      modules={[Navigation, Pagination, Autoplay, EffectFade]}
       spaceBetween={50}
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      onSlideChange={() => setVisible(false)}
       autoplay={{
-        // pauseOnMouseEnter: true,
         delay: 4000,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       }}
-     effect="fade"
-     fadeEffect={{
-       crossFade: true
-      
-     }}
-      // coverflowEffect={{
-      //   rotate: 300,
-      //   stretch: 50,
-      //   depth: 500,
-      //   modifier: 2.5,
-      //   slideShadows: true,
-      // }}
-      controller={{ control: 'swiper' }}
+      effect="fade"
+      fadeEffect={{
+        crossFade: true,
+      }}
+      onTransitionEnd={() => setVisible(true)}
     >
-      {slideImg?.map((item, index) => (
-      <SwiperSlide
-      key={item?.id}
-        // index={index}
-        className='  bg-center w-full mx-auto h-full slider-content'
-        // style={{
-        //   backgroundImage: `url('${item.src}')`
-        // }}
-        style={{
-          // backgroundImage: `url('${item?.src}')`,
-          // backgroundImage: `url('${getAssetURL(item?.directus_files_id)}')`,
-        }}
-      >
+      {slideImg.map((item) => (
+        <SwiperSlide key={item.id} className="bg-center w-full mx-auto h-full slider-content">
           <Image
-            src={item?.src}
-            alt='image'
+            src={getAssetURL(item.directus_files_id)}
+            alt="image"
             width={1000}
             height={1000}
             priority
-            className='w-screen no-repeat relative bg-no-repeat bg-cover h-full object-cover'
+            className="w-screen no-repeat relative bg-no-repeat bg-cover h-full object-cover"
           />
-
-
-
-        {/* <div className=' absolute  top-[50%] left-[10%] mx-10  text-left  text-white  w-[90%]  inner  '>
-          <h1>{tagline}</h1>
-          <p>{headline}</p>
-          <button>
-            <span className='shine'></span>
-            <span>Read More</span>
-          </button>
-        </div> */}
-      </SwiperSlide>
-        ))}
+          <div className={`absolute top-[75%] left-[10%] mx-10 text-left text-white w-[90%] inner transition-opacity duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+            <h1 className="text-4xl font-bold">{tagline}</h1>
+            <p className="text-2xl">{headline}</p>
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
-  )
-}
+  );
+};
+
+export default SliderHome;

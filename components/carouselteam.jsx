@@ -31,11 +31,11 @@ export default function TeamCarousel() {
   console.log('teamPageData', teamPageData)
   return (
     <>
-      <div className='py-5 md:py-10 max-w-[1350px] mx-auto'>
+      <div className='container py-5 md:py-10   mx-auto'>
         <div className='font-semibold text-base '>{teamPageData?.title}</div>
 
         <div
-          className='text-sm font-light text-left items-center max-sm:justify-center drop-shadow-lg transition-shadow duration-300'
+          className='text-sm mx-auto font-light text-left items-start max-sm:justify-center drop-shadow-lg transition-shadow duration-300'
           dangerouslySetInnerHTML={{
             __html: teamPageData?.description
           }}
