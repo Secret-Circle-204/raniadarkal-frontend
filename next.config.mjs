@@ -12,15 +12,15 @@ const nextConfig = {
             },
             {
                 protocol: 'http',
-                hostname: 'admin.eliayoussefdesigns.com',
+                hostname: '91.108.120.198',
                 port: '',
                 pathname: '/assets/**'
             },
             {
                 protocol: 'http',
-                hostname: 'localhost',
+                hostname: 'localhost:8055',
                 port: '',
-                // pathname: '/assets/**'
+                pathname: '/assets/**'
             }
 
         ]

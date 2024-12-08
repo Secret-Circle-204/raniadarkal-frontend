@@ -5,7 +5,7 @@ import * as nodemailer from 'nodemailer'
 export async function POST(request) {
   // const username = process.env.NEXT_PUBLIC_BURNER_USERNAME || 'rania@raniadarkal.com'
   const username = 'rania@raniadarkal.com'
-  const password = 'Elia@raniadarkal'
+  const password = 'raniadarkal'
   const recipientEmail = 'rania@raniadarkal.com'
   // const recipientEmail2 = 'test@gmail.com'
   const myEmail = 'rania@raniadarkal.com'
